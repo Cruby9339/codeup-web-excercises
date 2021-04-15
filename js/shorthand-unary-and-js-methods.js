@@ -22,34 +22,34 @@ var name = "Christian";
 
 // Mini Exercise
 
-var result = 1;
-
-result *= 4;
-
-console.log(result);
-
-var resultTwo = 2;
-
-resultTwo += 2;
-
-console.log(resultTwo);
-
-var resultThree = 20;
-
-resultThree /= 5;
-
-console.log(resultThree);
-
-var resultFour = 4;
-
-resultFour %= 15;
-
-console.log(resultFour);
-
-var resultFive = 6;
-
-resultFive -= 2;
-
-console.log(resultFive);
+// var result = 1;
+//
+// result *= 4;
+//
+// console.log(result);
+//
+// var resultTwo = 2;
+//
+// resultTwo += 2;
+//
+// console.log(resultTwo);
+//
+// var resultThree = 20;
+//
+// resultThree /= 5;
+//
+// console.log(resultThree);
+//
+// var resultFour = 4;
+//
+// resultFour %= 15;
+//
+// console.log(resultFour);
+//
+// var resultFive = 6;
+//
+// resultFive -= 2;
+//
+// console.log(resultFive);
 
 

@@ -7,11 +7,17 @@
 	 * 'names'.
 	 */
 
+	var names = ["Christian", "Marina", "Miyavi", "Kiryu"]
+
 	/**
 	 * TODO:
 	 * Create a log statement that will log the number of elements in the names
 	 * array.
 	 */
+
+	console.log(names.length);
+
+
 
 	/**
 	 * TODO:
@@ -19,16 +25,32 @@
 	 * accessing each element's index.
 	 */
 
+
 	/**
 	 * TODO:
 	 * Write some code that uses a for loop to log every item in the names
 	 * array.
 	 */
+// function myNames(array) {
+// 		for (var i = 0; i < array.length; i++){
+// 			console.log(array[i]);
+// 		}
+// 	}
+//
+// 	myNames(names);
 
 	/**
 	 * TODO:
 	 * Refactor your above code to use a `forEach` loop
 	 */
+
+	function myNames(array) {
+		array.forEach(element => console.log("Some names I recognize are: " + element));
+	}
+
+	myNames(names);
+
+	// names.forEach(element => console.log(element));
 
 	/**
 	 * TODO:
@@ -43,5 +65,24 @@
 	 *  > second([1, 2, 3, 4, 5]) // returns 2
 	 *  > last([1, 2, 3, 4, 5]) // return 5
 	 */
+		var nums = [1, 2, 3, 4, 5];
+
+		function findFirst(arr){
+			console.log(arr[0])
+		}
+
+		findFirst(nums);
+
+		function findTwo(arr){
+			console.log(arr[1])
+		}
+
+		findTwo(nums);
+
+		function findFive(arr){
+		console.log(arr[4])
+		}
+
+		findFive(nums);
 
 })();

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+	</head>
+	<body>
+		<h1>Register with Us</h1>
+		<form method="POST" action="https://request-inspector.glitch.me/">
+			<div>
+			<label for="email">Email</label>
+				<input id="email" type="text" name="email" placeholder="Enter your email address" required>
+			</div>
+			<div>
+			<label for="password">Password</label>
+				<input id="password" type="password" name="password" placeholder="Enter your password" required>
+			</div>
+				<button type="submit">Login</button>
+		</form>
+		<h2>Fill out a short bio!</h2>
+		<form method="POST" action="https://request-inspector.glitch.me/">
+			<textarea id="bio" name="bio" placeholder="Enter your bio"></textarea>
+			<div>
+			<button type="submit">Submit</button>
+			</div>
+		</form>
+		<h2>How did you hear about us?</h2>
+		<form method="POST" action="https://request-inspector.glitch.me/">
+			<label for="choice1">Billboard</label>
+			<input	id="choice1" type="radio" value="Billboard" name="q1">
+			<br>
+			<label for="choice2">Radio Advertisement</label>
+			<input	id="choice2" type="radio" value="Radio Advertisement" name="q1">
+			<br>
+			<label for="choice3">Internet advertisement</label>
+			<input	id="choice3" type="radio" value="Internet Advertisement" name="q1">
+			<br>
+			<label for="choice4">Other</label>
+			<input	id="choice4" type="radio" value="Other" name="q1">
+			<br>
+			<button type="submit">Submit</button>
+		</form>
+		<h2>Which Internet Browser are you using?</h2>
+		<form method="POST" action="https://request-inspector.glitch.me/">
+			<label for="internet-browser">Please select</label>
+			<select id="internet-browser" name="browser">
+				<option value="Mozilla Firefox">Mozilla Firefox</option>
+				<option value="Internet Explorer">Internet Explorer</option>
+				<option value="Google Chrome">Google Chrome</option>
+				<option value="Opera">Opera</option>
+				<option value="Safari">Safari</option>
+			</select>
+			<button type="submit">Submit</button>
+		</form>
+	</body>
+</html>

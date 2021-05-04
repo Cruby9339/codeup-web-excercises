@@ -1,0 +1,50 @@
+.fancy-header{
+    color: purple;
+    text-align: center;
+    text-decoration: underline;
+}
+body{
+    background: aqua;
+}
+
+h2{
+    color: purple;
+    text-decoration: underline;
+}
+
+ol{
+    list-style: square;
+}
+ul{
+    list-style: square;
+}
+
+body{
+    background-image: url("https://static.india.com/wp-content/uploads/2015/11/089.jpg?impolicy=Medium_Resize&w=1200&h=800");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: top;
+    background-size: 400px;
+
+}
+
+body{
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+table{
+    font-size: large;
+    padding: 10px;
+}
+
+a:link{
+    color: red;
+}
+
+a:visited{
+    color: green;
+}
+
+a:hover{
+    color: black;
+}

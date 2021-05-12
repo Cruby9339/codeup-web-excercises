@@ -1,17 +1,85 @@
-/*@media screen and (min-width: 365px){*/
-/*    ul{*/
-/*        list-style: none;*/
-/*    }*/
-/*}*/
+@media screen and (min-width: 934px){
 
-.hidden-on-desktop{
-    border: solid;
-    text-align: center;
-    margin: 1em;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    .hidden-on-desktop {
+        display: none;
+    }
+    body{
+        display: flex;
+        flex-wrap:wrap;
+        flex-direction: row;
+    }
+
+    nav{
+        display: flex;
+        margin: 0;
+
+    }
+
+    .nav-links{
+        display: flex;
+        flex-direction: row;
+        width: 25px;
+        margin-left: 60em;
+
+    }
+
+
+    .nav-links>li{
+        background: none;
+
+    }
+
+    h1{
+        position: absolute;
+    }
+
+
+
+    .main{
+        display: inline-block;
+
+        width: 40%;
+    }
+
+    .sub-section{
+        width: 40%;
+        display: inline-block;
+        align-self: flex-start;
+
+    .footer{
+        align-self: flex-end;
+    }
+
+    }
 }
 
+
+
+
+.hidden-on-desktop{
+    border: solid lightgrey;
+    text-align: center;
+    /*margin: 1em;*/
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: aqua;
+    text-decoration: none;
+}
+nav{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.alert-info>a{
+    text-decoration: none;
+    color: black;
+}
+
+.alert-info{
+    padding: 25px;
+    font-size: 25px;
+    margin-left: 10px;
+}
 
 ul{
     list-style: none;
@@ -22,6 +90,9 @@ ul{
 
 h1{
     text-align: center;
+    /*margin-top: 2em;*/
+    /*margin-bottom: 2em;*/
+
 }
 
 body{
@@ -29,20 +100,64 @@ body{
 }
 
 ul a{
-    text-decoration: none;
-    padding: 1em;
+    padding-top: 10px;
     display: inline-block;
+
 }
 
 ul li{
     height: 50px;
     margin: 10px;
     width: 100%;
-    border: solid;
     text-align: center;
+    padding: 10px;
+    font-size: 25px;
+    background-color: lightgrey;
 }
+
+
+
+.header-img {
+    width: calc(100% - 1em);
+    display: flex;
+    /*margin: 0 10px 0 10px;*/
+    justify-content: space-around;
+}
+.header-img>img {
+    width:100%;
+}
+
 
 
 .nav-links {
     padding: 0;
 }
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    margin-left: 5px;
+}
+
+.sub-section{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    margin-left: 5px;
+    font-style: italic;
+}
+
+footer{
+    margin-left: .5em;
+    height: 160px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    font-size: 15px;
+}
+
+footer>p{
+    margin: 0;
+}
+

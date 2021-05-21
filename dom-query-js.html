@@ -25,16 +25,24 @@
 			culpa qui officia deserunt mollit anim id est laborum.
 		</p>
 
-		<button id="btn1">Click</button>
-		<button id="btn2">Click</button>
-		<button id="btn3">Click</button>
-		<button id="btn4">Click</button>
-		<button id="btn5">Click</button>
+
+<!--		<button id="btn1">Click</button>-->
+<!--		<button id="btn2">Click</button>-->
+<!--		<button id="btn3">Click</button>-->
+<!--		<button id="btn4">Click</button>-->
+<!--		<button id="btn5">Click</button>-->
 
 		<script>
 			(function () {
 				"use strict";
 				// TODO: Uncomment next line and get the main header element by id
+
+				var btnOne = document.createElement("button");
+
+				btnOne.innerText = "Change Header"
+				btnOne.setAttribute("id", "btn1")
+				document.body.appendChild(btnOne)
+
 				var mainHeader = document.getElementById("main-header");
 
 				// TODO: Set inner html of mainHeader to "JavaScript is Cool"
@@ -45,6 +53,13 @@
 				document.getElementById('btn1').addEventListener('click', main)
 
 				// TODO: Uncomment the next line and get the sub header element by id
+				var btnTwo = document.createElement("button");
+
+				btnTwo.innerText = "Blue Sub Header"
+				btnTwo.setAttribute("id", "btn2")
+				document.body.appendChild(btnTwo)
+
+
 				var subHeader = document.getElementById("sub-header");
 
 				// TODO: Set the text color of subHeader to blue
@@ -59,14 +74,27 @@
 
 				// TODO: Set text color on every other list item to grey
 				// TODO: Set text color of li with dbid = 1 to blue
+				var btnThree = document.createElement("button");
 
-				var grey = function () {
+				btnThree.innerText = "Grey List Item";
+				btnThree.setAttribute("id", "btn3")
+				document.body.appendChild(btnThree)
+
+				let grey = function () {
 					for (let i = 0; i < listItems.length; i++) {
-						listItems[i].style.color = "grey"
+						if(i % 2 !== 0)
+							listItems[i].style.color = "grey"
 					}
 				}
 
-				document.getElementById('btn3').addEventListener('click', grey)
+				var greyButton = document.getElementById('btn3')
+				greyButton.addEventListener('click', grey)
+
+				var btnFour = document.createElement("button");
+
+				btnFour.innerText = "First Item blue";
+				btnFour.setAttribute("id", "btn4");
+				document.body.appendChild(btnFour);
 
 				var blue = function () {
 					listItems[0].style.color = "blue"
@@ -79,6 +107,16 @@
 				var subParagraphs = document.getElementsByClassName("sub-paragraph");
 
 				// TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+
+				var btnFive = document.createElement("button");
+
+				btnFive.innerText = "Mission Accomplished";
+				btnFive.setAttribute("id", "btn5");
+				document.body.appendChild(btnFive);
+
+
+
+
 				var ma = function (){
 					subParagraphs[0].innerHTML = "Mission Accomplished!"
 				}

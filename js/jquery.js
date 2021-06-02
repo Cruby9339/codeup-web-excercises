@@ -10,11 +10,27 @@
 //
 
 // $(".codeup").css('border', '1px solid red');
+//
+// $("li").css('font-size', '20px')
+//
+//
+// $("h1, p, li").css('background-color', '#FF0');
+//
+// var contents = $('h1').html();
+// alert(contents);
 
-$("li").css('font-size', '20px')
+$('#header').click(function (){
+		$(this).css('background-color', 'yellow');
+	});
 
+$('#paragraph').dblclick(function (){
+	$(this).css('font-size', '18px');
+});
 
-$("h1, p, li").css('background-color', '#FF0');
-
-var contents = $('h1').html();
-alert(contents);
+$('.list').hover(
+	function (){
+	$(this).css('color', 'red');
+},
+	function (){
+		$(this).css('color', 'black')
+	});

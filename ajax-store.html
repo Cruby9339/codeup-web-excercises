@@ -23,7 +23,7 @@
 			</thead>
 			<tbody id="insertProducts"></tbody>
 		</table>
-		<button id="button" class="button">click me</button>
+		<button id="button" class="button form-control btn-primary">click me</button>
 		</div>
 
 		<script src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -34,8 +34,8 @@
 				"use strict";
 				// TODO: Create an AJAX GET request for the file under data/inventory.json
 
-				var table = $('#insertProducts');
-				var store = $.ajax('data/inventory.json');
+				let table = $('#insertProducts');
+				let store = $.ajax('data/inventory.json');
 				store.done(function (data) {
 					data.forEach(function (item) {
 						table.append("<tr>" +
@@ -50,7 +50,6 @@
 					console.log(data);
 					console.log(status);
 				});
-
 
 
 				$(function () {

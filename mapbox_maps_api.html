@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link href="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css" rel="stylesheet"/>
+		<link rel="stylesheet"
+			  href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css"
+			  type="text/css">
+		<title>Title</title>
+	</head>
+	<body>
+
+		<div id="map" style="width: 800px; height:600px">
+
+		</div>
+
+
+
+
+		<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js"></script>
+		<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+		<script>
+			const token = "pk.eyJ1IjoiY3J1Ynk5MzM5IiwiYSI6ImNrcHBuODQ2bTA3dDkyd2w3eXRqemt4ZDgifQ.gfcDZ2mHj-bZDUVbLMwI4w"
+			mapboxgl.accessToken = token
+
+			var map = new mapboxgl.Map({
+				container: 'map',
+				style: "mapbox://styles/mapbox/streets-v11",
+				center: [-95.5537, 29.7037],
+				zoom: 12
+			});
+
+
+
+			let marker = setMarker([-95.5537, 29.7037]);
+
+			addMapEvent(marker)
+
+			let geocoder = setGeoCoder()
+			addGeocoderToMap(geocoder)
+			addGeocoderEvent(geocoder)
+
+
+			setPopup("This is my favorite curry restaurant: Go Go Curry!")
+
+
+			// creates and returns a new Geocoder (search box)
+			function setGeoCoder() {
+				return new MapboxGeocoder({
+					accessToken: mapboxgl.accessToken,
+					mapboxgl: mapboxgl,
+					marker: false
+				})
+			}
+
+
+			function addGeocoderToMap(geocoder) {
+				map.addControl(geocoder)
+			}
+
+
+			//creates the marker
+			function setMarker(point) {
+				return new mapboxgl.Marker().setLngLat(point)
+											.addTo(map);
+
+			}
+
+
+			//changes pin to wherever geocoder searches
+			function addGeocoderEvent(geocoder) {
+				geocoder.on("result", function (event) {
+					marker.setLngLat(event.result.geometry.coordinates)
+
+					setPopup(event.result.result_placename)
+				})
+			}
+
+
+			//adds event to map that changes location of mark
+			//based on where the user clicks
+			function addMapEvent() {
+				map.on('click', function (event) {
+					console.log(event.lngLat)
+					marker.setLngLat(event.lngLat)
+						  .addTo(map)
+				})
+			}
+
+
+			function setPopup(textdetails) {
+				let popup = new mapboxgl.Popup()
+					.setHTML(`<p>${textdetails}</p>`)
+					.addTo(map)
+
+				marker.setPopup(popup)
+			}
+		</script>
+	</body>
+</html>

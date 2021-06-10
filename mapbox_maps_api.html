@@ -17,61 +17,7 @@
 
 		<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js"></script>
 		<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
-		<script>
-			const token = "pk.eyJ1IjoiY3J1Ynk5MzM5IiwiYSI6ImNrcHBuODQ2bTA3dDkyd2w3eXRqemt4ZDgifQ.gfcDZ2mHj-bZDUVbLMwI4w"
-			mapboxgl.accessToken = token
-
-			var map = new mapboxgl.Map({
-				container: 'map',
-				style: "mapbox://styles/mapbox/streets-v11",
-				center: [-95.5537, 29.7037],
-				zoom: 5
-			});
-
-			var restaurantArr = [
-				{
-					address: "9889 Bellaire Blvd Suite C317, Houston, TX 77036",
-					popUp: "<p>GO GO Curry,9889 Bellaire Blvd Suite C317, Houston, TX 77036</p>"
-				},
-				{
-					address: "1242 Babcock Rd, San Antonio, TX 78201",
-					popUp: "<p>Mi Sierra Jalisco,1242 Babcock Rd, San Antonio, TX 78201</p>"
-				},
-				{
-					address: "9030 Wurzbach Rd, San Antonio, TX 78240",
-					popUp: "<p>Fujiya Japenese Garden,9030 Wurzbach Rd, San Antonio, TX 78240</p>"
-				}
-			];
-
-
-			restaurantArr.forEach(function (place) {
-				geocode(place.address, token)
-					.then(function (location) {
-						var marker = new mapboxgl.Marker()
-							.setLngLat(location)
-							.addTo(map);
-
-						var popup = new mapboxgl.Popup().setHTML(place.popUp)
-
-						marker.setPopup(popup)
-					})
-			})
-
-
-			//found function online to search for coords based on an address and return
-			function geocode(search, token) {
-				var baseUrl = 'https://api.mapbox.com';
-				var endPoint = '/geocoding/v5/mapbox.places/';
-				return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
-					.then(function(res) {
-						return res.json();
-					}).then(function(data) {
-						return data.features[0].center;
-					});
-			}
-
-
-
-		</script>
+		<script src="js/mapbox-geocoder-utils.js"></script>
+		<script src="js/mapbox_maps_api.js"></script>
 	</body>
 </html>
